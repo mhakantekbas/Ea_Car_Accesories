@@ -29,19 +29,19 @@ const Footer = () => {
 					<Col md={4}>
 						<h5>Quick Links</h5>
 						<ul className="list-unstyled">
-							<li><a href="/">Home</a></li>
-							<li><a href="/products">Products</a></li>
-							<li><a href="/about">About Us</a></li>
-							<li><a href="/contact">Contact Us</a></li>
+							<li ><a href="/">Home</a></li>
+							<li ><a href="/">Products</a></li>
+							<li ><a href="/">About Us</a></li>
+							<li ><a href="/">Contact Us</a></li>
 						</ul>
 					</Col>
 					<Col md={4}>
 						<h5>Follow Us</h5>
 						<ul className="list-unstyled">
-							<li><a href="/facebook">Facebook</a></li>
-							<li><a href="/twitter">Twitter</a></li>
-							<li><a href="/instagram">Instagram</a></li>
-							<li><a href="/linkedin">LinkedIn</a></li>
+							<li ><a href="/">Facebook</a></li>
+							<li ><a href="/">Twitter</a></li>
+							<li ><a href="/">Instagram</a></li>
+							<li ><a href="/">LinkedIn</a></li>
 						</ul>
 					</Col>
 				</Row>
@@ -49,7 +49,7 @@ const Footer = () => {
 			<div className="text-center py-3">
 				<p>&copy; {currentYear} Ea Car Accessories. All Rights Reserved.</p>
 			</div>
-		</footer>
+		</footer >
 	);
 };
 

@@ -8,6 +8,7 @@ import { logout } from '../slices/authSlice';
 import SearchBox from './SearchBox';
 import logo from '../assets/EACA_Std_L_White.png';
 import { resetCart } from '../slices/cartSlice';
+import ProductCarousel from './ProductCarousel';
 
 const Header = () => {
 	const { cartItems } = useSelector((state) => state.cart);
