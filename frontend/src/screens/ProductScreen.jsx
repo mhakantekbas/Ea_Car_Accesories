@@ -32,7 +32,6 @@ const ProductScreen = () => {
 	const [qty, setQty] = useState(1);
 	const [rating, setRating] = useState(0);
 	const [comment, setComment] = useState('');
-
 	const [showModal, setShowModal] = useState(false);
 
 	const openModal = () => setShowModal(true);
