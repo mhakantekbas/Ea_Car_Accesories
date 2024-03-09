@@ -1,3 +1,4 @@
+import React, { useState, useEffect } from 'react';
 import { Navbar, Nav, Container, NavDropdown, Badge } from 'react-bootstrap';
 import { FaShoppingCart, FaUser } from 'react-icons/fa';
 import { LinkContainer } from 'react-router-bootstrap';
@@ -8,7 +9,6 @@ import { logout } from '../slices/authSlice';
 import SearchBox from './SearchBox';
 import logo from '../assets/EACA_Std_L_White.png';
 import { resetCart } from '../slices/cartSlice';
-import ProductCarousel from './ProductCarousel';
 
 const Header = () => {
 	const { cartItems } = useSelector((state) => state.cart);
@@ -17,14 +17,14 @@ const Header = () => {
 	const dispatch = useDispatch();
 	const navigate = useNavigate();
 
+	const [scrollDown, setScrollDown] = useState(false);
+
 	const [logoutApiCall] = useLogoutMutation();
 
 	const logoutHandler = async () => {
 		try {
 			await logoutApiCall().unwrap();
 			dispatch(logout());
-			// NOTE: here we need to reset cart state for when a user logs out so the next
-			// user doesn't inherit the previous users cart and shipping
 			dispatch(resetCart());
 			navigate('/login');
 		} catch (err) {
@@ -32,8 +32,24 @@ const Header = () => {
 		}
 	};
 
+	useEffect(() => {
+		const handleScroll = () => {
+			if (window.scrollY > 80) {
+				setScrollDown(true);
+			} else {
+				setScrollDown(false);
+			}
+		};
+
+		window.addEventListener('scroll', handleScroll);
+
+		return () => {
+			window.removeEventListener('scroll', handleScroll);
+		};
+	}, []);
+
 	return (
-		<header>
+		<header style={{ backgroundColor: scrollDown ? '#000' : 'transparent', transition: 'background-color 0.3s ease' }}>
 			<Navbar bg='primary' variant='dark' expand='lg' color='' collapseOnSelect>
 				<Container>
 					<LinkContainer to='/'>

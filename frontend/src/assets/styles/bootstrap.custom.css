@@ -595,6 +595,48 @@ legend+* {
 	-webkit-appearance: textfield;
 }
 
+@media (min-width: 992px) {
+	.rounded-lg-3 {
+		border-radius: .3rem;
+	}
+}
+
+.feature-icon {
+	width: 4rem;
+	height: 4rem;
+	border-radius: .75rem;
+}
+
+.icon-square {
+	width: 3rem;
+	height: 3rem;
+	border-radius: .75rem;
+}
+
+.text-shadow-1 {
+	text-shadow: 0 .125rem .25rem rgba(0, 0, 0, .25);
+}
+
+.text-shadow-2 {
+	text-shadow: 0 .25rem .5rem rgba(0, 0, 0, .25);
+}
+
+.text-shadow-3 {
+	text-shadow: 0 .5rem 1.5rem rgba(0, 0, 0, .25);
+}
+
+.card-cover {
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: cover;
+}
+
+.feature-icon-small {
+	width: 3rem;
+	height: 3rem;
+}
+
+
 /* rtl:raw:
 [type="tel"],
 [type="url"],
@@ -6783,31 +6825,7 @@ fieldset:disabled .btn {
 	border-width: 0 calc(var(--bs-popover-arrow-width) * 0.5) var(--bs-popover-arrow-height);
 }
 
-/* SuperFeatures.css */
-.explanation {
-	color: gray;
-}
 
-.super-features {
-	background-color: #f8f9fa;
-	padding: 20px 0;
-}
-
-.feature-section {
-	text-align: center;
-	padding: 10px;
-	border-right: 1px solid #ddd;
-}
-
-.feature-section:last-child {
-	border-right: none;
-}
-
-.icon {
-	font-size: 2em;
-	color: #007bff;
-	margin-bottom: 10px;
-}
 
 .discount-badge {
 	position: absolute;
@@ -9567,7 +9585,7 @@ fieldset:disabled .btn {
 
 .text-body-secondary {
 	--bs-text-opacity: 1;
-	color: var(--bs-secondary-color) !important;
+	color: #007bff !important;
 }
 
 .text-body-tertiary {
