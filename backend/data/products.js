@@ -1,6 +1,6 @@
 const products = [
 	{
-		name: 'Accessories',
+		name: 'Black Gear Shift Knob Decoration Hoodie Hooded Auto Accessory Gear Shift Knob Sweatshirt',
 		image: '/images/black.png',
 		description:
 			'Introducing our Hoodie for Car Shifter the ultimate fusion of comfort and style for your driving pleasure. Crafted from premium materials, this innovative accessory keeps your hands warm and cozy while adding a touch of personality to your car\'s interior. Easy to install and built to last, our hoodie comes in a variety of colors and designs to suit your individual taste. Upgrade your driving experience today with our Hoodie for Car Shifter and make every journey a comfortable and stylish one.',
@@ -13,7 +13,7 @@ const products = [
 		discount: 0,
 	},
 	{
-		name: 'Accessories',
+		name: 'Blue Gear Shift Knob Decoration Hoodie Hooded Auto Accessory Gear Shift Knob Sweatshirt',
 		image: '/images/blue.png',
 		description:
 			'Introducing our Hoodie for Car Shifter the ultimate fusion of comfort and style for your driving pleasure. Crafted from premium materials, this innovative accessory keeps your hands warm and cozy while adding a touch of personality to your car\'s interior. Easy to install and built to last, our hoodie comes in a variety of colors and designs to suit your individual taste. Upgrade your driving experience today with our Hoodie for Car Shifter and make every journey a comfortable and stylish one.',
@@ -26,7 +26,7 @@ const products = [
 		discount: 0,
 	},
 	{
-		name: 'Accessories',
+		name: 'Orange Gear Shift Knob Decoration Hoodie Hooded Auto Accessory Gear Shift Knob Sweatshirt',
 		image: '/images/orange.png',
 		description:
 			'Introducing our Hoodie for Car Shifter the ultimate fusion of comfort and style for your driving pleasure. Crafted from premium materials, this innovative accessory keeps your hands warm and cozy while adding a touch of personality to your car\'s interior. Easy to install and built to last, our hoodie comes in a variety of colors and designs to suit your individual taste. Upgrade your driving experience today with our Hoodie for Car Shifter and make every journey a comfortable and stylish one.',
@@ -39,7 +39,7 @@ const products = [
 		discount: 0,
 	},
 	{
-		name: 'Accessories',
+		name: 'Pistachio Gear Shift Knob Decoration Hoodie Hooded Auto Accessory Gear Shift Knob Sweatshirt',
 		image: '/images/pistachio.png',
 		description:
 			'Introducing our Hoodie for Car Shifter the ultimate fusion of comfort and style for your driving pleasure. Crafted from premium materials, this innovative accessory keeps your hands warm and cozy while adding a touch of personality to your car\'s interior. Easy to install and built to last, our hoodie comes in a variety of colors and designs to suit your individual taste. Upgrade your driving experience today with our Hoodie for Car Shifter and make every journey a comfortable and stylish one.',
@@ -52,7 +52,7 @@ const products = [
 		discount: 0,
 	},
 	{
-		name: 'Accessories',
+		name: 'Red Gear Shift Knob Decoration Hoodie Hooded Auto Accessory Gear Shift Knob Sweatshirt',
 		image: '/images/red.png',
 		description:
 			'Introducing our Hoodie for Car Shifter the ultimate fusion of comfort and style for your driving pleasure. Crafted from premium materials, this innovative accessory keeps your hands warm and cozy while adding a touch of personality to your car\'s interior. Easy to install and built to last, our hoodie comes in a variety of colors and designs to suit your individual taste. Upgrade your driving experience today with our Hoodie for Car Shifter and make every journey a comfortable and stylish one.',
@@ -65,7 +65,7 @@ const products = [
 		discount: 0,
 	},
 	{
-		name: 'Accessories',
+		name: 'Rose Gear Shift Knob Decoration Hoodie Hooded Auto Accessory Gear Shift Knob Sweatshirt',
 		image: '/images/rose.png',
 		description:
 			'Introducing our Hoodie for Car Shifter the ultimate fusion of comfort and style for your driving pleasure. Crafted from premium materials, this innovative accessory keeps your hands warm and cozy while adding a touch of personality to your car\'s interior. Easy to install and built to last, our hoodie comes in a variety of colors and designs to suit your individual taste. Upgrade your driving experience today with our Hoodie for Car Shifter and make every journey a comfortable and stylish one.',
@@ -79,7 +79,7 @@ const products = [
 
 	},
 	{
-		name: 'Accessories',
+		name: 'Stone Gear Shift Knob Decoration Hoodie Hooded Auto Accessory Gear Shift Knob Sweatshirt',
 		image: '/images/stone.png',
 		description:
 			'Introducing our Hoodie for Car Shifter the ultimate fusion of comfort and style for your driving pleasure. Crafted from premium materials, this innovative accessory keeps your hands warm and cozy while adding a touch of personality to your car\'s interior. Easy to install and built to last, our hoodie comes in a variety of colors and designs to suit your individual taste. Upgrade your driving experience today with our Hoodie for Car Shifter and make every journey a comfortable and stylish one.',
@@ -93,7 +93,7 @@ const products = [
 
 	},
 	{
-		name: 'Accessories',
+		name: 'White Gear Shift Knob Decoration Hoodie Hooded Auto Accessory Gear Shift Knob Sweatshirt',
 		image: '/images/white.png',
 		description:
 			'Introducing our Hoodie for Car Shifter the ultimate fusion of comfort and style for your driving pleasure. Crafted from premium materials, this innovative accessory keeps your hands warm and cozy while adding a touch of personality to your car\'s interior. Easy to install and built to last, our hoodie comes in a variety of colors and designs to suit your individual taste. Upgrade your driving experience today with our Hoodie for Car Shifter and make every journey a comfortable and stylish one.',

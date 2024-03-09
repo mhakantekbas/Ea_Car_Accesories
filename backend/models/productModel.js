@@ -75,6 +75,11 @@ const productSchema = mongoose.Schema(
 	}
 );
 
+// Calculate discounted price method
+productSchema.methods.getDiscountedPrice = function () {
+	return (this.price * (100 - this.discount)) / 100;
+};
+
 const Product = mongoose.model('Product', productSchema);
 
 export default Product;

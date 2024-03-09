@@ -25,7 +25,7 @@ const Features = () => {
 					<FaWallet className="text-body-secondary flex-shrink-0 me-3" size="1.75em" />
 					<div>
 						<h3 className="fw-bold mb-0 fs-4 text-body-emphasis">Safe payments</h3>
-						<p> Make your payment with Paypal assurance</p>
+						<p> Make your payment with Paypal assurance.</p>
 					</div>
 				</div>
 				<div className="col d-flex align-items-start">
