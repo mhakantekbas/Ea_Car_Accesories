@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
@@ -33,6 +33,7 @@ const ProductScreen = () => {
 	const [rating, setRating] = useState(0);
 	const [comment, setComment] = useState('');
 	const [showModal, setShowModal] = useState(false);
+	const [discountedPrice, setDiscountedPrice] = useState(null); // State to store discounted price
 
 	const openModal = () => setShowModal(true);
 	const closeModal = () => setShowModal(false);
@@ -70,6 +71,13 @@ const ProductScreen = () => {
 		}
 	};
 
+	useEffect(() => {
+		if (product && product.discount > 0) {
+			const discountedPrice = (product.price - (product.price * product.discount) / 100).toFixed(2);
+			setDiscountedPrice(discountedPrice);
+		}
+	}, [product]);
+
 	return (
 		<>
 			<Link className='btn btn-light my-3' to='/'>
@@ -99,7 +107,17 @@ const ProductScreen = () => {
 										text={`${product.numReviews} reviews`}
 									/>
 								</ListGroup.Item>
-								<ListGroup.Item>Price: ${product.price}</ListGroup.Item>
+								<ListGroup.Item>
+									Price:
+									{product.discount ? (
+										<>
+											<span className="discounted-price">${discountedPrice}</span>
+											<span className="actual-price">${product.price}</span>
+										</>
+									) : (
+										<span className="normal-price">${product.price}</span>
+									)}
+								</ListGroup.Item>
 								<ListGroup.Item>
 									Description: {product.description}
 								</ListGroup.Item>
@@ -112,7 +130,14 @@ const ProductScreen = () => {
 										<Row>
 											<Col>Price:</Col>
 											<Col>
-												<strong>${product.price}</strong>
+												Price:
+												{product.discount ? (
+													<>
+														<strong className="discounted-price">${discountedPrice}</strong>
+													</>
+												) : (
+													<strong className="normal-price">${product.price}</strong>
+												)}
 											</Col>
 										</Row>
 									</ListGroup.Item>
