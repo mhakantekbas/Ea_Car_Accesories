@@ -29,10 +29,17 @@ const addOrderItems = asyncHandler(async (req, res) => {
 			const matchingItemFromDB = itemsFromDB.find(
 				(itemFromDB) => itemFromDB._id.toString() === itemFromClient._id
 			);
+
+			let discountedPrice = matchingItemFromDB.price;
+			if (matchingItemFromDB.discount > 0) {
+				// Apply discount if available
+				discountedPrice = matchingItemFromDB.getDiscountedPrice();
+			}
+
 			return {
 				...itemFromClient,
 				product: itemFromClient._id,
-				price: matchingItemFromDB.price,
+				price: discountedPrice,
 				_id: undefined,
 			};
 		});
