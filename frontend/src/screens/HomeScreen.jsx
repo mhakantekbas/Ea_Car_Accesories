@@ -9,6 +9,7 @@ import Paginate from '../components/Paginate';
 import Meta from '../components/Meta';
 import Hoodie from '../components/Hoodie';
 import Features from '../components/Features';
+import Cover from '../components/Cover';
 
 const HomeScreen = () => {
 	const { pageNumber, keyword } = useParams();
@@ -26,7 +27,7 @@ const HomeScreen = () => {
 	};
 
 	return (
-		<>
+		<><Cover scrollToLatestProducts={scrollToLatestProducts} />
 			{isLoading ? (
 				<Loader />
 			) : error ? (

@@ -5,7 +5,7 @@ import { BsCartFill } from "react-icons/bs";
 
 const Features = () => {
 	return (
-		<div className="container px-4 py-0" id="icon-grid">
+		<div className="container px-4 py-3" id="icon-grid">
 			<div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 py-0">
 				<div className="col d-flex align-items-start">
 					<FaTruck className="text-body-secondary flex-shrink-0 me-3" size="1.75em" />

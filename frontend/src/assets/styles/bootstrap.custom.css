@@ -6867,6 +6867,61 @@ fieldset:disabled .btn {
 	/* Apply border when hovered */
 }
 
+
+
+.cover-page {
+	position: relative;
+	height: 100vh;
+}
+
+.photo-background {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-image: url('../Cover3_EA.png');
+	background-size: cover;
+	background-position: center;
+}
+
+.content-container {
+	position: absolute;
+	top: 50%;
+	left: 5%;
+	transform: translateY(-50%);
+	background-color: rgba(0, 0, 0, 0.5);
+	/* Semi-transparent black background */
+	padding: 20px;
+	display: inline-block;
+	/* Make container size itself to its content */
+}
+
+.content {
+	color: white;
+	text-align: left;
+	font-size: 22px;
+}
+
+@media (max-width: 768px) {
+	.content {
+		font-size: 24px;
+	}
+}
+
+@media (max-width: 576px) {
+	.content {
+		font-size: 26px;
+	}
+}
+
+.heading {
+	color: white;
+	/* Set heading color to white */
+}
+
+
+
 .bs-popover-bottom>.popover-arrow::before,
 .bs-popover-auto[data-popper-placement^='bottom']>.popover-arrow::before {
 	top: 0;
