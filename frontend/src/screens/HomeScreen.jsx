@@ -39,8 +39,8 @@ const HomeScreen = () => {
 					<Features />
 					<Hoodie scrollToLatestProducts={scrollToLatestProducts} />
 					<Meta />
-					<h1 id="latestProducts">Latest Products</h1>
-					<Row>
+					<h1 id="latestProducts" className='px-5'>Latest Products</h1>
+					<Row className='px-5'>
 						{data.products.map((product) => (
 							<Col key={product._id} sm={12} md={6} lg={4} xl={3}>
 								<Product product={product} />

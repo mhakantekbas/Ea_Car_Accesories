@@ -11,6 +11,7 @@ import {
 	Button,
 	Form,
 	Modal,
+	Container,
 } from 'react-bootstrap';
 import { toast } from 'react-toastify';
 import {
@@ -79,7 +80,7 @@ const ProductScreen = () => {
 	}, [product]);
 
 	return (
-		<>
+		< >
 			<Link className='btn btn-light my-3' to='/'>
 				Go Back
 			</Link>
