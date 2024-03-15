@@ -80,7 +80,7 @@ const ProductScreen = () => {
 	}, [product]);
 
 	return (
-		< >
+		<Container className='px-3'>
 			<Link className='btn btn-light my-3' to='/'>
 				Go Back
 			</Link>
@@ -313,7 +313,7 @@ const ProductScreen = () => {
 					</Row>
 				</>
 			)}
-		</>
+		</Container>
 	);
 };
 

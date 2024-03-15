@@ -27,7 +27,8 @@ const HomeScreen = () => {
 	};
 
 	return (
-		<><Cover scrollToLatestProducts={scrollToLatestProducts} />
+		<>
+			<Cover scrollToLatestProducts={scrollToLatestProducts} />
 			{isLoading ? (
 				<Loader />
 			) : error ? (

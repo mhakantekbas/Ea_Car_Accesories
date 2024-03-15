@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Navbar, Nav, Container, NavDropdown, Badge } from 'react-bootstrap';
 import { FaShoppingCart, FaUser } from 'react-icons/fa';
 import { LinkContainer } from 'react-router-bootstrap';
@@ -17,7 +17,6 @@ const Header = () => {
 	const dispatch = useDispatch();
 	const navigate = useNavigate();
 
-	const [scrollDown, setScrollDown] = useState(false);
 
 	const [logoutApiCall] = useLogoutMutation();
 
@@ -32,24 +31,10 @@ const Header = () => {
 		}
 	};
 
-	useEffect(() => {
-		const handleScroll = () => {
-			if (window.scrollY > 80) {
-				setScrollDown(true);
-			} else {
-				setScrollDown(false);
-			}
-		};
 
-		window.addEventListener('scroll', handleScroll);
-
-		return () => {
-			window.removeEventListener('scroll', handleScroll);
-		};
-	}, []);
 
 	return (
-		<header style={{ backgroundColor: scrollDown ? '#000' : 'transparent', transition: 'background-color 0.3s ease' }}>
+		<header>
 			<Navbar bg='primary' variant='dark' expand='lg' color='' collapseOnSelect>
 				<Container>
 					<LinkContainer to='/'>
@@ -62,6 +47,7 @@ const Header = () => {
 					<Navbar.Toggle aria-controls='basic-navbar-nav' />
 					<Navbar.Collapse id='basic-navbar-nav'>
 						<Nav className='ms-auto'>
+
 							<SearchBox />
 							<LinkContainer to='/cart'>
 								<Nav.Link>
