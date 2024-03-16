@@ -1,7 +1,8 @@
 import React from 'react';
-import { Row, Col } from 'react-bootstrap';
+import { Row, Col, Container } from 'react-bootstrap';
 import { useParams } from 'react-router-dom';
 import { useGetProductsQuery } from '../slices/productsApiSlice';
+import { Link } from 'react-router-dom';
 import Product from '../components/Product';
 import Loader from '../components/Loader';
 import Message from '../components/Message';
@@ -27,8 +28,19 @@ const HomeScreen = () => {
 	};
 
 	return (
-		<>
-			<Cover scrollToLatestProducts={scrollToLatestProducts} />
+		<>{!keyword ?
+			(<>
+				<Cover scrollToLatestProducts={scrollToLatestProducts} />
+				<Features />
+				<Hoodie scrollToLatestProducts={scrollToLatestProducts} />
+			</>
+
+			) : (
+				<Link to='/' className='btn btn-light mx-5 my-3 '>
+					Go Back
+				</Link>
+			)
+		}
 			{isLoading ? (
 				<Loader />
 			) : error ? (
@@ -37,8 +49,7 @@ const HomeScreen = () => {
 				</Message>
 			) : (
 				<>
-					<Features />
-					<Hoodie scrollToLatestProducts={scrollToLatestProducts} />
+
 					<Meta />
 					<h1 id="latestProducts" className='px-5'>Latest Products</h1>
 					<Row className='px-5'>

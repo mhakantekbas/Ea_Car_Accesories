@@ -6,7 +6,7 @@ import logo from '../assets/EACA_Std_L_White.png';
 const Footer = () => {
 	const currentYear = new Date().getFullYear();
 	return (
-		<footer className="custom-footer-bg text-light py-5">
+		<footer className="custom-footer-bg text-light py-5 mt-2">
 			<Container>
 				<Row>
 					<Col md={4}>
@@ -30,9 +30,9 @@ const Footer = () => {
 						<h5>Quick Links</h5>
 						<ul className="list-unstyled">
 							<li ><a href="/">Home</a></li>
-							<li ><a href="/">Products</a></li>
-							<li ><a href="/">About Us</a></li>
-							<li ><a href="/">Contact Us</a></li>
+							<li ><a href="/search/s">Products</a></li>
+							<li ><a href="/about">About Us</a></li>
+							<li ><a href="/contact">Contact Us</a></li>
 						</ul>
 					</Col>
 					<Col md={4}>

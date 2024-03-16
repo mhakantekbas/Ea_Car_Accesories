@@ -27,10 +27,10 @@ const App = () => {
 			<ToastContainer />
 			<Header />
 			<main>
-				<div>
+				<div >
 					<Outlet />
 				</div>
-			</main>
+			</main >
 			<Footer />
 		</>
 	);

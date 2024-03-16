@@ -46,8 +46,22 @@ const Header = () => {
 					</LinkContainer>
 					<Navbar.Toggle aria-controls='basic-navbar-nav' />
 					<Navbar.Collapse id='basic-navbar-nav'>
-						<Nav className='ms-auto'>
+						<Nav className='ms-auto d-flex gap-3'>
+							<LinkContainer to='/'>
+								<Nav.Link>Home</Nav.Link>
+							</LinkContainer>
 
+							<LinkContainer to='/search/s'>
+								<Nav.Link>Products</Nav.Link>
+							</LinkContainer>
+
+							<LinkContainer to='/about'>
+								<Nav.Link>About Us</Nav.Link>
+							</LinkContainer>
+
+							<LinkContainer to='/contact'>
+								<Nav.Link>Contact Us</Nav.Link>
+							</LinkContainer>
 							<SearchBox />
 							<LinkContainer to='/cart'>
 								<Nav.Link>
