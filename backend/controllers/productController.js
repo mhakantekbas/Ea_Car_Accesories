@@ -1,5 +1,6 @@
 import asyncHandler from '../middleware/asyncHandler.js';
 import Product from '../models/productModel.js';
+import Order from '../models/orderModel.js';
 
 // @desc    Fetch all products
 // @route   GET /api/products
@@ -115,6 +116,18 @@ const createProductReview = asyncHandler(async (req, res) => {
 	const product = await Product.findById(req.params.id);
 
 	if (product) {
+		// Check if the user has purchased the product
+		const hasPurchased = await Order.exists({
+			'user': req.user._id,
+			'orderItems.product': req.params.id,
+			'isPaid': true
+		});
+
+		if (!hasPurchased) {
+			res.status(400);
+			throw new Error('You must purchase the product to leave a review');
+		}
+
 		const alreadyReviewed = product.reviews.find(
 			(r) => r.user.toString() === req.user._id.toString()
 		);
@@ -147,6 +160,7 @@ const createProductReview = asyncHandler(async (req, res) => {
 	}
 });
 
+
 // @desc    Get top rated products
 // @route   GET /api/products/top
 // @access  Public
@@ -156,6 +170,18 @@ const getTopProducts = asyncHandler(async (req, res) => {
 	res.json(products);
 });
 
+// @desc    Get products by category
+// @route   GET /api/products/category/:category
+// @access  Public
+const getProductsByCategory = asyncHandler(async (req, res) => {
+	const products = await Product.find({
+		category: req.params.category,
+	});
+
+	res.json(products);
+});
+
+
 export {
 	getProducts,
 	getProductById,
@@ -164,4 +190,5 @@ export {
 	deleteProduct,
 	createProductReview,
 	getTopProducts,
+	getProductsByCategory,
 };
