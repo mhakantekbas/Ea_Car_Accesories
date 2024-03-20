@@ -9,8 +9,8 @@ const OrderListScreen = () => {
 	const { data: orders, isLoading, error } = useGetOrdersQuery();
 
 	return (
-		<Container className='mx-5'>
-			<h1>Orders</h1>
+		<Container className='px-3'>
+			<h1 className="my-3">Orders</h1>
 			{isLoading ? (
 				<Loader />
 			) : error ? (

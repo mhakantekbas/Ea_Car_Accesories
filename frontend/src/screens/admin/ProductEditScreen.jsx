@@ -91,7 +91,7 @@ const ProductEditScreen = () => {
 				Go Back
 			</Link>
 			<FormContainer>
-				<h1>Edit Product</h1>
+				<h1 >Edit Product</h1>
 				{loadingUpdate && <Loader />}
 				{isLoading ? (
 					<Loader />

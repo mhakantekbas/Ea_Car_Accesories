@@ -17,9 +17,9 @@ const Footer = () => {
 							<Col xs={9}>
 								<h5>Contact Us</h5>
 								<ul className="list-unstyled">
-									<li><FaEnvelope className="me-2" />info@eacaraccessories.com</li>
-									<li><FaPhone className="me-2" />+1234567890</li>
-									<li><FaMapMarkerAlt className="me-2" />123 Street, City, Country</li>
+									<li><FaEnvelope className="me-2" />edrisafzali8@gmail.com</li>
+									<li><FaPhone className="me-2" />+1 (916) 841-5679</li>
+									<li><FaMapMarkerAlt className="me-2" />3610 Auburn blvd, Sacramento, California</li>
 								</ul>
 							</Col>
 						</Row>

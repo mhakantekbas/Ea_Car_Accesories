@@ -6,7 +6,7 @@ const ContactUsScreen = () => {
 		<Container>
 			<Row className="justify-content-center">
 				<Col md={8}>
-					<h1>Contact Us</h1>
+					<h1 className="my-4">Contact Us</h1>
 					<p>We'd love to hear from you! Get in touch using the form below or reach out to us through our social media channels.</p>
 
 					<Form>
@@ -37,9 +37,9 @@ const ContactUsScreen = () => {
 						{/* Replace these placeholders with your actual information */}
 						You can also reach us at:
 						<br />
-						- Email: info@eacaraccessories.com
+						- Email: edrisafzali8@gmail.com
 						<br />
-						- Phone: (555) 555-5555
+						- Phone: +1 (916) 841-5679
 					</p>
 
 

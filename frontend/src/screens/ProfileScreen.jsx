@@ -58,7 +58,7 @@ const ProfileScreen = () => {
 						animate={{ opacity: 1, y: 0 }}
 						transition={{ duration: 0.5 }}
 					>
-						<h2>User Profile</h2>
+						<h2 className="my-4">User Profile</h2>
 						<Form onSubmit={submitHandler}>
 							<Form.Group className='my-2' controlId='name'>
 								<Form.Label>Name</Form.Label>
@@ -113,7 +113,7 @@ const ProfileScreen = () => {
 						animate={{ opacity: 1, x: 0 }}
 						transition={{ duration: 0.5 }}
 					>
-						<h2>My Orders</h2>
+						<h2 className="my-4">My Orders</h2>
 						{isLoading ? (
 							<Loader />
 						) : error ? (

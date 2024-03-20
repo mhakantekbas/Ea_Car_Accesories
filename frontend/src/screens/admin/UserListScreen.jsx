@@ -28,7 +28,7 @@ const UserListScreen = () => {
 
 	return (
 		<Container className='px-3'>
-			<h1>Users</h1>
+			<h1 className="my-3">Users</h1>
 			{isLoading ? (
 				<Loader />
 			) : error ? (
