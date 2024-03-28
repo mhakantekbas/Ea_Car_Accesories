@@ -195,6 +195,14 @@ const getProductsByCategory = asyncHandler(async (req, res) => {
 	res.json({ products, page, pages: Math.ceil(count / pageSize) });
 });
 
+// @desc    Get all categories
+// @route   GET /api/products/categories
+// @access  Public
+const getCategories = asyncHandler(async (req, res) => {
+	const categories = await Product.distinct('category');
+	res.json(categories);
+});
+
 export {
 	getProducts,
 	getProductById,
@@ -204,4 +212,5 @@ export {
 	createProductReview,
 	getTopProducts,
 	getProductsByCategory,
+	getCategories
 };

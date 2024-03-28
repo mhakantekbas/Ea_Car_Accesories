@@ -1,4 +1,5 @@
 import { LinkContainer } from 'react-router-bootstrap';
+import React, { useState } from 'react';
 import { Table, Button, Row, Col, Container } from 'react-bootstrap';
 import { FaEdit, FaPlus, FaTrash } from 'react-icons/fa';
 import { useParams } from 'react-router-dom';
@@ -12,12 +13,31 @@ import {
 } from '../../slices/productsApiSlice';
 import { toast } from 'react-toastify';
 
-const ProductListScreen = () => {
-	const { pageNumber } = useParams();
 
+const ProductListScreen = () => {
+
+	const { pageNumber } = useParams();
 	const { data, isLoading, error, refetch } = useGetProductsQuery({
 		pageNumber,
 	});
+	const [selectedCategory, setSelectedCategory] = useState('');
+	// Get unique categories
+	let categories = [];
+
+	if (data && data.products) {
+		categories = [...new Set(data.products.map((product) => product.category))];
+	}
+
+	const handleCategoryClick = (category) => {
+		setSelectedCategory(category);
+	};
+
+	let filteredProducts = [];
+	if (data && data.products) {
+		filteredProducts = selectedCategory
+			? data.products.filter((product) => product.category === selectedCategory)
+			: data.products;
+	}
 
 	const [deleteProduct, { isLoading: loadingDelete }] =
 		useDeleteProductMutation();
@@ -60,6 +80,12 @@ const ProductListScreen = () => {
 				</Col>
 			</Row >
 
+			{categories.map((category) => (
+				<Button className='mb-3 mx-2' key={category} onClick={() => handleCategoryClick(category)}>
+					{category}
+				</Button>
+			))}
+
 			{loadingCreate && <Loader />}
 			{loadingDelete && <Loader />}
 			{
@@ -81,7 +107,7 @@ const ProductListScreen = () => {
 								</tr>
 							</thead>
 							<tbody>
-								{data.products.map((product) => (
+								{filteredProducts.map((product) => (
 									<tr key={product._id}>
 										<td>{product._id}</td>
 										<td>{product.name}</td>

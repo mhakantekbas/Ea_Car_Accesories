@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Navbar, Nav, Container, NavDropdown, Badge } from 'react-bootstrap';
 import { FaShoppingCart, FaUser } from 'react-icons/fa';
 import { LinkContainer } from 'react-router-bootstrap';
@@ -9,14 +9,15 @@ import { logout } from '../slices/authSlice';
 import SearchBox from './SearchBox';
 import logo from '../assets/EACA_Std_L_White.png';
 import { resetCart } from '../slices/cartSlice';
+import axios from 'axios';
 
 const Header = () => {
 	const { cartItems } = useSelector((state) => state.cart);
 	const { userInfo } = useSelector((state) => state.auth);
+	const [categories, setCategories] = useState([]);
 
 	const dispatch = useDispatch();
 	const navigate = useNavigate();
-
 
 	const [logoutApiCall] = useLogoutMutation();
 
@@ -31,7 +32,18 @@ const Header = () => {
 		}
 	};
 
+	useEffect(() => {
+		const fetchCategories = async () => {
+			try {
+				const response = await axios.get('/api/products/categories');
+				setCategories(response.data);
+			} catch (error) {
+				console.error('Error fetching categories:', error);
+			}
+		};
 
+		fetchCategories();
+	}, []);
 
 	return (
 		<header>
@@ -51,9 +63,16 @@ const Header = () => {
 								<Nav.Link>Home</Nav.Link>
 							</LinkContainer>
 
-							<LinkContainer to='/search/s'>
-								<Nav.Link>Products</Nav.Link>
-							</LinkContainer>
+							{/* Render dropdown button with categories */}
+							{categories.length > 0 && (
+								<NavDropdown title='Products' id='categories-dropdown'>
+									{categories.map(category => (
+										<LinkContainer key={category} to={`/category/${category}`}>
+											<NavDropdown.Item>{category}</NavDropdown.Item>
+										</LinkContainer>
+									))}
+								</NavDropdown>
+							)}
 
 							<LinkContainer to='/about'>
 								<Nav.Link>About Us</Nav.Link>

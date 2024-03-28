@@ -59,10 +59,16 @@ export const productsApiSlice = apiSlice.injectEndpoints({
 			keepUnusedDataFor: 5,
 		}),
 		getProductsByCategory: builder.query({
-			query: (category) => ({
+			query: ({ category, pageNumber }) => ({
 				url: `${PRODUCTS_URL}/category/${category}`,
+				params: { category, pageNumber },
 				keepUnusedDataFor: 5,
 			}),
+			getCategories: builder.query({
+				query: () => `${PRODUCTS_URL}/categories`,
+				providesTags: ['Categories'],
+			}),
+
 		}),
 	}),
 });
@@ -76,4 +82,6 @@ export const {
 	useDeleteProductMutation,
 	useCreateReviewMutation,
 	useGetTopProductsQuery,
+	useGetCategoriesQuery,
+	useGetProductsByCategoryQuery,
 } = productsApiSlice;
