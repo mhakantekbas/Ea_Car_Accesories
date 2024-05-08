@@ -38,7 +38,10 @@
 
 - Full featured shopping cart
 - Product reviews and ratings
-- Top products carousel
+- Contact us page
+- Send email through contact us page
+- About us page
+- List Products by their category page
 - Product pagination
 - Product search feature
 - User profile with orders
