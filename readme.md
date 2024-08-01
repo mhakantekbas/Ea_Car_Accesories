@@ -1,6 +1,4 @@
-# Ea Car Accossories eCommerce Platform (v2)
-
-> eCommerce platform built with the MERN stack & Redux.
+# Ea Car Accossories eCommerce Website
 
 <!-- toc -->22
 ![1](https://github.com/mhakantekbas/Ea_Car_Accesories/assets/77413887/e622876d-fb8d-43f7-8b8e-14f42144c08d)
