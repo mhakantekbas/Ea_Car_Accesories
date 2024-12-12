@@ -33,3 +33,6 @@
 - Database seeder (products & users)
 
 
+Deployed at: https://eacaraccessories.com/
+Note: Since I am using a free plan for the deployment, the page takes some time to load initially.
+
